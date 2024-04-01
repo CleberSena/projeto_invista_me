@@ -1,0 +1,18 @@
+{% extends 'investimentos/base.html' %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+
+<div class="container" style=" padding: 30px; background-color:aquamarine; border-radius: 10px; box-shadow: 3px 2px 5px;">
+    <h1 style="text-align: center; font-size: 50px; text-shadow: 2px 2px 2px #000 ;box-shadow: 3px 2px 3px; font-weight: bolder;background-color: orange; color: yellow; border-radius: 50px; box-shadow: 3px 2px 5px #000">
+        Você Saiu do Sistema:
+    </h1>
+    <form method="post">
+    
+        {% csrf_token %} 
+
+        <a style="margin-top: 10px; color: rgb(6, 2, 250); font-weight: 600; font-size: 20px;" href="{% url 'login' %}">
+            Fazer Login Novamente:
+        </a>
+    </form>
+</div>
+{% endblock%}

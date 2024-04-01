@@ -1,0 +1,54 @@
+{% extends 'investimentos/base.html' %}
+{% block conteudo %}
+<div class="container" style="background-color: white; box-shadow: 3px 2px 3px; border-radius: 0 0 20px 20px;" >
+    <h1 style="text-align: center; background-color: aquamarine; border-radius: 30%; color: blueviolet; font-weight: bolder; box-shadow: 2px 1px 3px;">
+        Detalhes do Investimento:
+    </h1>
+
+    <table class="table table-haver table-bordered">
+        <tr style="font-size: 25px;">
+            <th  style="color: #f55b02;">
+                Id  
+            </th>
+
+            <th style="color: #2f02f5;">
+                Investimento  
+            </th>
+
+            <th style="color: #f51202;">
+                Valor  
+            </th>
+
+            <th style="color: #0a6901;">
+                Data  
+            </th>
+
+            <th style="color: #000;">
+                Pago
+            </th>            
+        </tr>
+
+        <tr>
+            <td style="color: #f55b02; font-weight: 500;">
+                {{dados.id}}
+            </td>
+
+            <td style="color: #2f02f5; font-weight: 500;">
+                {{dados.investimento}}
+            </td>
+
+            <td style="color: #f51202; font-weight: 500;">
+                {{dados.valor}}
+            </td>
+
+            <td style="color: #0a6901; font-weight: 500;">
+                {{dados.data}}
+            </td>
+
+            <td style="color: #000; font-weight: 500;">
+                {{dados.pago}}
+            </td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

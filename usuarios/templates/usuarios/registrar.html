@@ -1,0 +1,25 @@
+{% extends 'investimentos/base.html' %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+
+<div class="container" style="background-color:aquamarine; border-radius: 10px; box-shadow: 3px 2px 5px;">
+
+    <h1 style="text-align: center; background-color: rgba(12, 12, 253, 0.534); border-radius: 50px; color: white; text-shadow: 3px 2px 3px #000;">
+        Cadastrar Novo Usuário:
+    </h1>
+
+    <form method="post">
+    
+        {% csrf_token %}        
+        {{formulario | crispy }}
+
+        <button class="btn btn-primary" style="margin: 15px 0; color: black; font-weight: 500;"  type="submit" >
+            Criar novo Usuário
+        </button>
+
+        <a style="margin-top: 10px; color: rgb(252, 3, 52); font-weight: 400;" href="{% url 'login' %}">
+            Já posui uma conta? Clique aqui:
+        </a>
+    </form>
+</div>
+{% endblock%}

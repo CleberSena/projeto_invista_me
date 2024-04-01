@@ -1,0 +1,78 @@
+{% extends 'investimentos/base.html' %}
+{% block conteudo %}
+<div class="containerP" style="background-color: rgb(250, 93, 2);">
+
+    <h1 style="text-align: center; color: rgb(250, 250, 252);">
+        Listagem dos Investimentos:
+    </h1>
+    <div class="container" style="background-color: rgb(0, 255, 255); border-radius: 20px; box-shadow: 4px 3px 5px;">
+    
+        <button class="btn btn-success" style="margin-bottom: 10px;">
+    
+            <a style="color: rgb(255, 255, 255); font-weight: 900;"  href="{% url 'novo_investimento' %}">
+                Novo Investimento
+            </a>
+            
+        </button>
+    
+        <table class="table table-striped table-borderd">
+            <tr style="color: rgb(175, 3, 109);">
+                <th>
+                    Id
+                </th>
+    
+                <th>
+                    Investimento
+                </th>
+    
+                <th>
+                    Valor
+                </th>            
+            </tr>
+    
+            {% for dado in dados %}
+    
+            <tr style="color: black; font-weight: 500;">
+                <td>
+                    {{dado.id}}
+                </td>
+    
+                <td>
+                    {{dado.investimento}}
+                </td>
+    
+                <td>
+                    {{dado.valor}}
+                </td>
+    
+                <td>
+                    <button class="btn btn-info">
+                        <a style="color: white;" href="{% url 'detalhes' dado.id %}">
+                            Detalhes
+                        </a>
+                    </button>
+                </td>
+                
+                <td>
+                    <button class="btn btn-warning">
+                        <a style="color: white;" href="{% url 'editar' dado.id %}">
+                            Editar
+                        </a>
+                    </button>
+                </td>
+                
+                <td>
+                    <button class="btn btn-danger">
+                        <a style="color: white;" href="{% url 'excluir' dado.id %}">
+                            Excluir
+                        </a>
+                    </button>
+                </td>
+            </tr>
+    
+            {% endfor %}
+    
+        </table>
+    </div>
+    {% endblock %}
+</div>
