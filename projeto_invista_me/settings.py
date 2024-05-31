@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-b+wpe8_sg)gd=a54@1o0xg$35jwr4mz5l$a^bepj^jxo^g%p#u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,9 +78,13 @@ WSGI_APPLICATION = "projeto_invista_me.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres', 
+        'USER': 'postgres.tiguuduybaibafdseapw', 
+        'PASSWORD': 'PVP6JZWd~##d%(@',
+        'HOST': 'aws-0-us-east-1.pooler.supabase.com', 
+        'PORT': '6543'
     }
 }
 
